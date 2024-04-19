@@ -108,11 +108,9 @@
                             vkBridge.subscribe((e) => {
                                     if (e.detail.type === 'VKWebAppViewHide') {
                                       myGameInstance.SendMessage('Init', 'StopMusAndGame'); 
-                                      myGameInstance.SendMessage('Init', 'StopOrResume'); 
                                     }
                                     if (e.detail.type === 'VKWebAppViewRestore') {
                                       myGameInstance.SendMessage('Init', 'ResumeMusAndGame');  
-                                      myGameInstance.SendMessage('Init', 'StopOrResume');  
                                     }
                             });
                             vkBridge.send('VKWebAppStorageGet', {
