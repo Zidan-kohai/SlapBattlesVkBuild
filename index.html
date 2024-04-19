@@ -107,9 +107,11 @@
                             myGameInstance = unityInstance;
                             vkBridge.subscribe((e) => {
                                     if (e.detail.type === 'VKWebAppViewHide') {
+                                        console.log("VKWebAppView Hide")
                                       myGameInstance.SendMessage('Init', 'StopMusAndGame'); 
                                     }
                                     if (e.detail.type === 'VKWebAppViewRestore') {
+                                        console.log("VKWebAppView Restore")
                                       myGameInstance.SendMessage('Init', 'ResumeMusAndGame');  
                                     }
                             });
